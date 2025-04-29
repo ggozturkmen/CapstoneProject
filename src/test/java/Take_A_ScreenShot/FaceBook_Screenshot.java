@@ -10,6 +10,7 @@ import java.io.File;
 import java.io.IOException;
 
 public class FaceBook_Screenshot {
+
     public static void main(String[] args) throws IOException {
         WebDriver driver = new ChromeDriver();
 //
