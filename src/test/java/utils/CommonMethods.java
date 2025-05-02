@@ -16,7 +16,9 @@ public class CommonMethods {
 
     public static  WebDriver driver;
     public static void openBrowserAndLaunchApplication() throws IOException {
-
+//created this class to store reusable methods.
+        //Instead of writing the same code again and again in my test classes
+        //I can just create a method once here and call it anywhere.
         switch (ConfigReader.read("browser")){
             case "Chrome":
                 driver=new ChromeDriver();

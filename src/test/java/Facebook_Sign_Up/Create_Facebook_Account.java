@@ -17,13 +17,17 @@ click on Sign up
  */
 public class Create_Facebook_Account {
     public static void main(String[] args) throws InterruptedException {
+        // Create chromeDriver instance to open new browser
         WebDriver driver=new ChromeDriver();
 
         driver.manage().window().maximize();
-
+//    open the facebook homepage
         driver.get("https://www.facebook.com");
+        //click create new account. I located the create new account link by its text and clicked on it
         driver.findElement(By.linkText("Create new account")).click();
-        Thread.sleep(1000);
+        Thread.sleep(10000);
+        //Fill out the form fields like first name, last name,  email, password, and birthday
+        //by finding each element using their names.
         driver.findElement(By.name("firstname")).sendKeys("Gulcan");
         driver.findElement(By.name("lastname")).sendKeys("Ozturk");
         driver.findElement(By.name("reg_email__")).sendKeys("gulcangokhan02@gmail.com");
@@ -32,8 +36,10 @@ public class Create_Facebook_Account {
         driver.findElement(By.name("birthday_month")).sendKeys("July");
         driver.findElement(By.name("birthday_day")).sendKeys("20");
         driver.findElement(By.name("birthday_year")).sendKeys("1992");
+        //select the gender and click on signup botton.
         driver.findElement(By.className("_58mt")).click();
         driver.findElement(By.name("websubmit")).click();
+        //added waits to give the page enough time to load between actions.
         Thread.sleep(8000);
 
         driver.quit();

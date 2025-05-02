@@ -12,19 +12,20 @@ import java.io.IOException;
 public class FaceBook_Screenshot {
 
     public static void main(String[] args) throws IOException {
+        //open the Chrome browser
         WebDriver driver = new ChromeDriver();
 //
         driver.manage().window().maximize();
-//        Go to facebook.com
+//        Navigate  to facebook.com
         driver.get("https://www.facebook.com/");
-
+//       Capture Screenshot.
         TakesScreenshot ss=(TakesScreenshot) driver;
 
 //        taking the ss
         File screenshot = ss.getScreenshotAs(OutputType.FILE);
-//        save the screenshot
+//        save the screenshot in the specific folder
         FileUtils.copyFile(screenshot,new File("screenshot/mistakes.png"));
-
+//      close the browser
         driver.quit();
     }
 }
